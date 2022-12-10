@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap");
+:root {
+  --main-color: hsl(179, 61%, 47%);
+  --minor-color-two: hsl(179, 93%, 32%);
+  --minor-color: hsl(71, 73%, 54%);
+  --light-grey: hsl(204, 43%, 93%);
+  --greyish-blue: hsl(218, 22%, 67%);
+  --dark-grey: hsl(228, 45%, 44%);
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+*::after,
+*::before,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+body {
+  background: var(--greyish-blue);
+  display: grid;
+  justify-items: center;
+}
+section {
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+footer {
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+}
+footer a:link,
+footer a:visited {
+  color: blue;
+}
+.container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.8rem;
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.card-col-one {
+  padding: 4rem 6rem;
+}
+.card-col-two {
+  background: var(--minor-color-two);
+  border-radius: 0 0 0 0.8rem;
+  padding: 4rem 3rem;
+  color: #fff;
+}
+.card-col-three {
+  background: var(--main-color);
+  border-radius: 0 0 0.8rem 0;
+  padding: 4rem 3rem;
+  color: #fff;
+}
+.card-col-one-h2 {
+  color: var(--main-color);
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+.card-col-one-h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--minor-color);
+  margin-bottom: 1.4rem;
+}
+.card-col-one-first-paragraph {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--greyish-blue);
+}
+.card-col-two-h2,
+.card-col-three-h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.card-col-two-flex-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.card-col-two-first-paragraph {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+.card-col-two-second-paragraph {
+  color: var(--greyish-blue);
+  font-size: 1.6rem;
+}
+.card-col-two-h4 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.signUp--btn {
+  position: relative;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1.3rem 8rem;
+  background: var(--minor-color);
+  /* color: var(--light-grey); */
+  color: #fff;
+  border-radius: 1rem;
+  z-index: 999;
+}
+.signUp--btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--minor-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+.signUp--btn:hover.signUp--btn::after {
+  transform: scaleX(1.4) scaleY(1.8);
+  opacity: 0;
+}
+.card-col-three-paragraphs {
+  font-size: 1.5rem;
+  color: var(--light-grey);
+  line-height: 1.5;
+  letter-spacing: 0.12rem;
+}
+.dollar {
+  animation: dolar 5s both infinite;
+  transition: all 0.8s ease-in-out;
+}
+.dollar:hover {
+  /* font-size: 3.8rem; */
+  color: var(--minor-color);
+}
+@keyframes dolar {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.card-col-two-items {
+  transition: all 0.5s ease-in-out;
+}
+.card-col-two:hover .card-col-two-items {
+  transform: scale(1.12);
+}
+.card-col-two {
+  overflow: hidden;
+}
+@media screen and (max-width: 576px) {
+  .grid-row {
+    grid-template-columns: 1fr;
+  }
+  .card-col-two {
+    border-radius: 0;
+  }
+  .card-col-two-items {
+    display: grid;
+  }
+  .signUp--btn {
+    justify-self: center;
+    padding: 1.3rem 8rem;
+  }
+  .card-col-three {
+    border-radius: 0 0 0.8rem 0.8rem;
+  }
+}
+@media screen and (max-width: 476px) {
+  footer {
+    font-size: 1rem;
+  }
+}
+/*  */
+/*  */
+/*  */
+/*  */
+.container-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.562);
+  pointer-events: none;
+  border-radius: 0.8rem;
+  z-index: 9999;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+.container-overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container-overlay-h2 {
+  font-size: 3rem;
+  color: #fff;
+}
+.showOverlay.container-overlay {
+  opacity: 1;
+  animation: overlayAnime 1s ease-in-out;
+}
+@keyframes overlayAnime {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
